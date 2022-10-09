@@ -1,0 +1,54 @@
+cabal-version: 3.0
+name:          tasty-all
+version:       0.1
+synopsis:      Tasty ecosystem in one package
+description:
+  Reexports of the latest versions of most common tasty packages.
+  = Contents
+  * "tasty"
+  * "tasty-golden"
+  * "tasty-hunit"
+  * "tasty-quickcheck"
+  = Versioning policy
+  A bump in the version of any of the reexported packages
+  causes a bump in the according position of this package.
+
+category:      Testing, Tasty
+homepage:      https://github.com/nikita-volkov/tasty-all
+bug-reports:   https://github.com/nikita-volkov/tasty-all/issues
+author:        Nikita Volkov <nikita.y.volkov@mail.ru>
+maintainer:    Nikita Volkov <nikita.y.volkov@mail.ru>
+copyright:     (c) 2022, Nikita Volkov
+license:       MIT
+license-file:  LICENSE
+
+source-repository head
+  type:     git
+  location: git://github.com/nikita-volkov/tasty-all.git
+
+library
+  default-language:   Haskell2010
+  reexported-modules:
+    , Test.Tasty
+    , Test.Tasty.Golden
+    , Test.Tasty.Golden.Advanced
+    , Test.Tasty.Golden.Manage
+    , Test.Tasty.HUnit
+    , Test.Tasty.Ingredients
+    , Test.Tasty.Ingredients.Basic
+    , Test.Tasty.Ingredients.ConsoleReporter
+    , Test.Tasty.Options
+    , Test.Tasty.Patterns.Eval
+    , Test.Tasty.Patterns.Parser
+    , Test.Tasty.Patterns.Printer
+    , Test.Tasty.Patterns.Types
+    , Test.Tasty.Providers
+    , Test.Tasty.Providers.ConsoleFormat
+    , Test.Tasty.QuickCheck
+    , Test.Tasty.Runners
+
+  build-depends:
+    , tasty             ^>=1.4.2.3
+    , tasty-golden      ^>=2.3.5
+    , tasty-hunit       ^>=0.10.0.3
+    , tasty-quickcheck  ^>=0.10.2
